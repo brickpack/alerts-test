@@ -1,0 +1,43 @@
+account:
+  name: "Production"
+  id: "123456789012"
+  region: "us-east-1"
+  auth_type: "role"
+  role_arn: "arn:aws:iam::123456789012:role/GrafanaCloudWatchAccess"
+
+rds_instances:
+  - name: "prod-db-1"
+    alerts:
+      cpu:
+        enabled: true
+        threshold: 80
+        for: "5m"
+        severity: "warning"
+        description: "RDS instance CPU utilization is high"
+        summary: "High CPU Usage detected on RDS instance"
+      
+      storage:
+        enabled: true
+        threshold_gb: 10
+        for: "5m"
+        severity: "critical"
+        description: "RDS instance is running low on storage space"
+        summary: "Low storage space detected on RDS instance"
+  
+  - name: "prod-db-2"
+    alerts:
+      cpu:
+        enabled: true
+        threshold: 80
+        for: "5m"
+        severity: "warning"
+        description: "RDS instance CPU utilization is high"
+        summary: "High CPU Usage detected on RDS instance"
+      
+      storage:
+        enabled: true
+        threshold_gb: 10
+        for: "5m"
+        severity: "critical"
+        description: "RDS instance is running low on storage space"
+        summary: "Low storage space detected on RDS instance" 

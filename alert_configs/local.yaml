@@ -1,0 +1,24 @@
+account:
+  name: "Local"
+  id: "local"
+  region: "us-east-1"
+  auth_type: "default"  # Options: default, credentials, role
+
+rds_instances:
+  - name: "your-rds-instance-id"
+    alerts:
+      cpu:
+        enabled: true
+        threshold: 80
+        for: "5m"
+        severity: "warning"
+        description: "RDS instance CPU utilization is high"
+        summary: "High CPU Usage detected on RDS instance"
+      
+      storage:
+        enabled: true
+        threshold_gb: 10
+        for: "5m"
+        severity: "critical"
+        description: "RDS instance is running low on storage space"
+        summary: "Low storage space detected on RDS instance" 
